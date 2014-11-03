@@ -1,0 +1,7 @@
+- name: copy repo file
+  copy: src=mongodb.repo dest=/etc/yum.repos.d/mongodb.repo mode=0644
+  sudo: yes
+
+- name: install mongodb
+  yum: name=mongodb-org state=present
+  sudo: yes
