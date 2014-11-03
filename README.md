@@ -11,6 +11,12 @@
 
 終わったらrebootをかける必要がある
 
+実行コマンド
+
+```
+ansible-playbook -i hosts root-site.yml -u root --ask-pass -c paramiko
+```
+
 ###設定ファイル
 
 - group_vars/all : ssh portの設定
@@ -37,3 +43,14 @@ users:
 ## 作成したuserでやる設定
 
 - iptablesの設定
+
+実行コマンド
+
+作成したユーザーとlocalのユーザ名が同じ場合
+
+```
+$ cat hosts
+[servers]
+xx.xx.xx.xx:sshd_port
+$ ansible-playbook -i hosts site.yml
+```

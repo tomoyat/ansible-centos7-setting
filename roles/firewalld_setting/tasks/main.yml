@@ -1,0 +1,13 @@
+- name: copy firewalld servie config
+  template: src=services/{{item}}.j2 dest=/etc/firewalld/services/{{item}}.xml
+  with_items:
+    - ssh
+  sudo: yes
+
+- name: copy firewalld default zone config
+  template: src=zones/public.j2 dest=/etc/firewalld/zones/public.xml
+  sudo: yes
+
+- name: restart firewalld
+  service: name=firewalld state=restarted enabled=yes
+  sudo: yes
