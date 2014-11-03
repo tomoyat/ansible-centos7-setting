@@ -1,0 +1,8 @@
+- name: yum update
+  yum: name=* state=latest
+
+- name: disable selinux
+  selinux: state=disabled
+
+- name: disable firewalld
+  service: name=firewalld enabled=no

@@ -1,0 +1,9 @@
+# create home directory for new new user
+create_homedir: true
+
+users:
+  - username: user_name
+    groups:
+      - "wheel"
+    password: "hashed password"
+    ssh_key: "public key"

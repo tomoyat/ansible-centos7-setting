@@ -1,0 +1,5 @@
+- name: install sudo package
+  yum: name=sudo state=latest
+
+- name: set sudo file
+  copy: src=sudoers dest=/etc/sudoers validate='visudo -cf %s'

@@ -1,0 +1,3 @@
+- name: set sshd_config file
+  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config mode=600 owner=root group=root
+  notify: restart sshd

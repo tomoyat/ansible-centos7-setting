@@ -1,0 +1,15 @@
+- name: create group
+  group: name="{{item.username}}"
+  with_items: users
+
+- name: create user
+  user: name="{{item.username}}"
+        group="{{item.username}}"
+        groups="{{item.groups | join(',')}}"
+        createhome="{{'yes' if create_homedir else 'no'}}"
+        password="{{item.password}}"
+  with_items: users
+
+- name: ssh key
+  authorized_key: user="{{item.username}}" key="{{item.ssh_key}}"
+  with_items: users

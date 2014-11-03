@@ -1,0 +1,6 @@
+- hosts: servers
+  roles:
+    - first_setting
+    - user_add
+    - sudo_setting
+    - sshd_setting
