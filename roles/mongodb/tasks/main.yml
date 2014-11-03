@@ -5,3 +5,7 @@
 - name: install mongodb
   yum: name=mongodb-org state=present
   sudo: yes
+
+- name: start mongo
+  service: name=mongod state=started enabled=yes
+  sudo: yes
