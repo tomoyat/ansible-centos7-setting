@@ -15,6 +15,7 @@
 
 - group_vars/all : ssh portの設定
 - roles/user_add/vars/main.yml : userの設定
+- hosts : hostの設定
 
 
 ###userの設定ファイル
