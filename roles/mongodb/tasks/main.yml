@@ -6,6 +6,11 @@
   yum: name=mongodb-org state=present
   sudo: yes
 
+- name: set conf
+  template: src=mongod.conf.j2 dest=/etc/mongod.conf
+  sudo: yes
+  notify: restart mongo
+
 - name: start mongo
   service: name=mongod state=started enabled=yes
   sudo: yes

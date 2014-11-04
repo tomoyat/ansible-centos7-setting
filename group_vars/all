@@ -1,1 +1,2 @@
 sshd_port: 22
+mongod_port: 27017
